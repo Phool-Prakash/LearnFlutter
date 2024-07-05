@@ -27,7 +27,7 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (builder) => MyStatefulWidget()));
+                        builder: (builder) =>const MyStatefulWidget()));
               },
               child: const Text('InheritedWidget'))
         ],
