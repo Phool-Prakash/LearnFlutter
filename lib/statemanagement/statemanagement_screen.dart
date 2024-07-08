@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/statemanagement/inheritedWidget/mystatefulWidget.dart';
+import 'package:flutter_learn/statemanagement/statefull&less/statefull/bird.dart';
 
 class StatemanagementScreen extends StatefulWidget {
   const StatemanagementScreen({super.key});
@@ -27,11 +28,43 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (builder) =>const MyStatefulWidget()));
+                        builder: (builder) => const MyStatefulWidget()));
               },
-              child: const Text('InheritedWidget'))
+              child: const Text('InheritedWidget')),
+          CustomElevatedButton(
+              text: 'StateFull&StateLess',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const Bird(
+                              color: Colors.deepPurple,
+                              child: Center(
+                                child: Text(
+                                  'Stateful Widget',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ),
+                            )));
+              })
         ],
       ),
+    );
+  }
+}
+
+///Using Widget method to create a CustomElevatedButton
+
+class CustomElevatedButton extends StatelessWidget {
+  const CustomElevatedButton(
+      {super.key, required this.text, required this.onPressed});
+  final VoidCallback onPressed;
+  final String text;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(onPressed: onPressed, child: Text(text)),
     );
   }
 }
