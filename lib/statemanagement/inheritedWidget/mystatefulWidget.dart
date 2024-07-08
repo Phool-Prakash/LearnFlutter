@@ -41,7 +41,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           builder: (builder) => const MyColorPage()));
                 },
                 child: const Text('Example 2')),
+
+            // _buildButton(context),
+            // const ExampleButton()
           ],
         ));
   }
+
+  ///Helper method
+  ///
+  /// Creating Button using helper Method inside the same widget class
+
+  // Widget _buildButton(BuildContext context) {
+  //   return ElevatedButton(onPressed: () {}, child: const Text('Example 2'));
+  // }
 }
+
+///This is the Widgets method
+// class ExampleButton extends StatelessWidget {
+//   const ExampleButton({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return ElevatedButton(onPressed: () {}, child: const Text('Example 2'));
+//   }
+// }
