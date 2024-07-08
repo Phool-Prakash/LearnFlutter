@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/statemanagement/inheritedWidget/mystatefulWidget.dart';
 import 'package:flutter_learn/statemanagement/statefull&less/statefull/bird.dart';
+import 'package:flutter_learn/statemanagement/styledWidgets/styledWidgets.dart';
 
 class StatemanagementScreen extends StatefulWidget {
   const StatemanagementScreen({super.key});
@@ -46,6 +47,14 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                                 ),
                               ),
                             )));
+              }),
+          CustomElevatedButton(
+              text: 'Styled Widget',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const StyledWidgets()));
               })
         ],
       ),
