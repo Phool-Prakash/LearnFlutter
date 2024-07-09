@@ -5,6 +5,30 @@ class StyledWidgets extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: Center(
+      child: Column(
+        children: [
+          Container(
+            width: 350,
+            decoration: BoxDecoration(
+                color: Colors.green.shade800,
+                borderRadius: BorderRadius.circular(8)),
+            child: const Padding(
+              padding: EdgeInsets.all(12),
+              child: Text(
+                'Lorem ipsem dolor sit amet....',
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ));
   }
 }
+
