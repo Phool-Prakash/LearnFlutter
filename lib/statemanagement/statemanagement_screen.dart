@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/statemanagement/Widgets/materialWidget/materialWidget.dart';
 import 'package:flutter_learn/statemanagement/inheritedWidget/mystatefulWidget.dart';
 import 'package:flutter_learn/statemanagement/statefull&less/statefull/bird.dart';
 import 'package:flutter_learn/statemanagement/styledWidgets/styledWidgets.dart';
@@ -55,6 +56,14 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                     context,
                     MaterialPageRoute(
                         builder: (builder) => const StyledWidgets()));
+              }),
+          CustomElevatedButton(
+              text: 'Material Widget',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const MaterialWidget()));
               })
         ],
       ),
