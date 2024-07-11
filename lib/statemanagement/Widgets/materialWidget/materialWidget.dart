@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/customButton/customElevatedButton.dart';
 import 'package:flutter_learn/customButton/customFilledButton.dart';
 
+import '../../../buttomNavigationBar/buttomNevigationBar.dart';
+
 class MaterialWidget extends StatefulWidget {
   const MaterialWidget({super.key});
 
@@ -14,7 +16,7 @@ class _MaterialWidgetState extends State<MaterialWidget> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.purple,
@@ -36,6 +38,19 @@ class _MaterialWidgetState extends State<MaterialWidget> {
             const SizedBox(
               height: 20,
             ),
+            Container(
+              height: 44.0,
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Color.fromARGB(255, 2, 173, 102), Colors.blue])),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                child: const Text('Elevated Button'),
+              ),
+            ),
 
             ///flutter package (own)
             // const FancyContainersNew(
@@ -52,6 +67,23 @@ class _MaterialWidgetState extends State<MaterialWidget> {
             // )
           ],
         ),
+        bottomNavigationBar: const BottomAppBar(),
+        floatingActionButton: FloatingActionButton(
+          elevation: 0,
+          backgroundColor: Colors.deepPurpleAccent,
+          splashColor: Colors.deepPurple,
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (builder) => const BottomNavigationBarExample()));
+          },
+          child: const Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
     );
   }

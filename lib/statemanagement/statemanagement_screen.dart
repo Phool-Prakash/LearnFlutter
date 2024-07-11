@@ -13,8 +13,10 @@ class StatemanagementScreen extends StatefulWidget {
 }
 
 class _StatemanagementScreenState extends State<StatemanagementScreen> {
+  int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green,
@@ -83,29 +85,34 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
               text: 'CupertinoWidgets',
             ),
           ),
-          const SizedBox(height: 12,),
+          const SizedBox(
+            height: 12,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-              borderRadius: BorderRadius.all(Radius.circular(20)),
+              borderRadius: const BorderRadius.all(Radius.circular(20)),
               onTap: () {},
               child: Container(
                 height: 48,
                 width: MediaQuery.of(context).size.width * 0.60,
-                decoration:const BoxDecoration(
-                    borderRadius: const BorderRadius.all(Radius.circular(16)),
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(16)),
                     gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                         colors: [
                           Colors.deepOrangeAccent,
-                          const Color((0xFFFFB8B2),
+                          Color(
+                            (0xFFFFB8B2),
                           ),
-                          const Color(0xFFF44336),
+                          Color(0xFFF44336),
                         ]),
-                    boxShadow: const [
+                    boxShadow: [
                       BoxShadow(
-                          color: Colors.grey, blurRadius: 8, offset: Offset(0, 5))
+                          color: Colors.grey,
+                          blurRadius: 8,
+                          offset: Offset(0, 5))
                     ]),
                 child: const Center(
                   child: Text(
@@ -119,7 +126,29 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                 ),
               ),
             ),
-          )
+          ),
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        indicatorColor: Colors.white,
+        selectedIndex: currentPageIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: 'Home',
+
+          ),
+          NavigationDestination(icon: Icon(Icons.school), label: 'School'),
+          NavigationDestination(
+              icon: Icon(Icons.notifications), label: 'Notifications'),
+          NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+          NavigationDestination(icon: Icon(Icons.message), label: 'Messages')
         ],
       ),
     );

@@ -35,12 +35,7 @@ class CustomElevatedButton extends StatelessWidget {
         child: ElevatedButton(
           style: buttonStyle ??
               ElevatedButton.styleFrom(
-                 foregroundColor: Colors.purpleAccent,
-                  overlayColor: Colors.purple,
-                  iconColor: Colors.black,
-                  surfaceTintColor: Colors.black,
                   shape: RoundedRectangleBorder(
-
                       borderRadius: borderRadius ?? BorderRadius.circular(12),
                       side: BorderSide(
                           color: borderColor ?? Colors.white24,
