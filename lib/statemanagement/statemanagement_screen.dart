@@ -1,3 +1,4 @@
+import 'package:custombutton_che/custombutton_che.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/statemanagement/Widgets/materialWidget/materialWidget.dart';
 import 'package:flutter_learn/statemanagement/inheritedWidget/mystatefulWidget.dart';
@@ -64,7 +65,61 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                     context,
                     MaterialPageRoute(
                         builder: (builder) => const MaterialWidget()));
-              })
+              }),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CustomButtonChe(
+              color1: Colors.purpleAccent,
+              color2: Colors.deepPurpleAccent,
+              color3: Colors.purpleAccent,
+              bHeight: 48,
+              bWidth: 200,
+              onPressed: () {
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (builder) => const MaterialWidget()));
+              },
+              text: 'CupertinoWidgets',
+            ),
+          ),
+          const SizedBox(height: 12,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: InkWell(
+              borderRadius: BorderRadius.all(Radius.circular(20)),
+              onTap: () {},
+              child: Container(
+                height: 48,
+                width: MediaQuery.of(context).size.width * 0.60,
+                decoration:const BoxDecoration(
+                    borderRadius: const BorderRadius.all(Radius.circular(16)),
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Colors.deepOrangeAccent,
+                          const Color((0xFFFFB8B2),
+                          ),
+                          const Color(0xFFF44336),
+                        ]),
+                    boxShadow: const [
+                      BoxShadow(
+                          color: Colors.grey, blurRadius: 8, offset: Offset(0, 5))
+                    ]),
+                child: const Center(
+                  child: Text(
+                    'InWell',
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 15,
+                        letterSpacing: 0.8,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

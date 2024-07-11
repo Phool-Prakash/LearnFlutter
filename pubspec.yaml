@@ -32,6 +32,8 @@ dependencies:
     sdk: flutter
   flutter_package:
     path: D:/Android/flutter_package
+  custombutton_che:
+    path: D:/Android/custombutton_che
 
 
   # The following adds the Cupertino Icons font to your application.
