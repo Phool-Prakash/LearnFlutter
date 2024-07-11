@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/bottomNavigationBar/customNavigationBar/customNavigationBar.dart';
 
 class BottomNavigationBar1 extends StatefulWidget {
   const BottomNavigationBar1({super.key});
@@ -24,7 +25,11 @@ class _BottomNavigationBar1State extends State<BottomNavigationBar1> {
         height: 80,
         backgroundColor: Colors.purple,
         destinations: const <Widget>[
-          NavigationDestination(icon: Icon(Icons.feed), label: 'Feed',tooltip: 'Feed',),
+          NavigationDestination(
+            icon: Icon(Icons.feed),
+            label: 'Feed',
+            tooltip: 'Feed',
+          ),
           NavigationDestination(icon: Icon(Icons.message), label: 'Message'),
           NavigationDestination(
               icon: Icon(Icons.notifications), label: 'Notification'),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+const double _kIndicatorHeight = 32;
+const double _kIndicatorWidth = 64;
+const double _kMaxLabelTextScaleFactor = 1.3;
+
 class CustomNavigationBar extends StatelessWidget {
   const CustomNavigationBar(
       {super.key,
@@ -14,7 +18,10 @@ class CustomNavigationBar extends StatelessWidget {
       this.surfaceTintColor,
       this.indicatorColor,
       this.labelBehavior,
-      this.overlayColor});
+      this.overlayColor})
+      : assert(destinations.length >= 2),
+        assert(0 <= selectedIndex && selectedIndex < destinations.length);
+
   final Duration? animationDuration;
   final int selectedIndex;
   final List<Widget> destinations;
@@ -30,7 +37,29 @@ class CustomNavigationBar extends StatelessWidget {
         : () {};
   }
 
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    //1
+    // final NavigationBarThemeData defaults = _defaultsFor(context);
+
+    final NavigationBarThemeData navigationBarTheme =
+        NavigationBarTheme.of(context);
+    final double effectiveHeight = height ?? navigationBarTheme.height!;
+    final NavigationDestinationLabelBehavior? effectiveLabelBehavior =
+        labelBehavior ?? navigationBarTheme.labelBehavior;
+
+    return Material(
+      color: backgroundColor ?? navigationBarTheme.backgroundColor,
+      elevation: elevation ?? navigationBarTheme.elevation!,
+      shadowColor: shadowColor ?? navigationBarTheme.shadowColor,
+      surfaceTintColor: surfaceTintColor ?? navigationBarTheme.surfaceTintColor,
+      child: SafeArea(
+        child: SizedBox(
+          height: effectiveHeight,
+          child: Row(children: <Widget>[
+          ]),
+        ),
+      ),
+    );
   }
 }
