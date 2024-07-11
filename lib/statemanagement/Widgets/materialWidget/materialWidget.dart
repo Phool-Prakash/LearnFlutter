@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/customButton/customElevatedButton.dart';
 import 'package:flutter_learn/customButton/customFilledButton.dart';
 
-import '../../../buttomNavigationBar/buttomNevigationBar.dart';
+import '../../../bottomNavigationBar/bottomNavigationBar(NavigationBar).dart';
 
 class MaterialWidget extends StatefulWidget {
   const MaterialWidget({super.key});
@@ -76,7 +76,7 @@ class _MaterialWidgetState extends State<MaterialWidget> {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (builder) => const BottomNavigationBarExample()));
+                    builder: (builder) => const BottomNavigationBar1()));
           },
           child: const Icon(
             Icons.add,

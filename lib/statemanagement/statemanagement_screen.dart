@@ -129,28 +129,28 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: NavigationBar(
-
-        onDestinationSelected: (int index) {
-          setState(() {
-            currentPageIndex = index;
-          });
-        },
-        indicatorColor: Colors.white,
-        selectedIndex: currentPageIndex,
-        destinations: const <Widget>[
-          NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Home',
-
-          ),
-          NavigationDestination(icon: Icon(Icons.school), label: 'School'),
-          NavigationDestination(
-              icon: Icon(Icons.notifications), label: 'Notifications'),
-          NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
-          NavigationDestination(icon: Icon(Icons.message), label: 'Messages')
-        ],
-      ),
+      // bottomNavigationBar: NavigationBar(
+      //
+      //   onDestinationSelected: (int index) {
+      //     setState(() {
+      //       currentPageIndex = index;
+      //     });
+      //   },
+      //   indicatorColor: Colors.white,
+      //   selectedIndex: currentPageIndex,
+      //   destinations: const <Widget>[
+      //     NavigationDestination(
+      //       icon: Icon(Icons.home),
+      //       label: 'Home',
+      //
+      //     ),
+      //     NavigationDestination(icon: Icon(Icons.school), label: 'School'),
+      //     NavigationDestination(
+      //         icon: Icon(Icons.notifications), label: 'Notifications'),
+      //     NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
+      //     NavigationDestination(icon: Icon(Icons.message), label: 'Messages')
+      //   ],
+      // ),
     );
   }
 }
