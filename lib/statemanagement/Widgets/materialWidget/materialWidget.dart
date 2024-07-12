@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/bottomNavigationBar/notchedBottomNavBar.dart';
 import 'package:flutter_learn/customButton/customElevatedButton.dart';
 import 'package:flutter_learn/customButton/customFilledButton.dart';
 
@@ -65,6 +66,14 @@ class _MaterialWidgetState extends State<MaterialWidget> {
             //   titleTextSize: 25,
             //   subTitleTextSize: 18,
             // )
+            CustomElevatedButton(
+                text: 'NotchedBottomNavBar',
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => const NotchedBottomNavBar()));
+                })
           ],
         ),
         bottomNavigationBar: const BottomAppBar(),
