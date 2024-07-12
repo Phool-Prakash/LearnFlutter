@@ -9,13 +9,30 @@ class ResponsiveWidgets extends StatefulWidget {
 }
 
 class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
+
     final currentSize = MediaQuery.of(context).size.width;
     final currentSize1 = MediaQuery.sizeOf(context).width;
     var i = 1;
     return SafeArea(
         child: Scaffold(
+      bottomNavigationBar: NavigationBar(
+        selectedIndex : _currentIndex,
+        onDestinationSelected: (int index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        indicatorColor: Colors.white,
+        destinations: const <Widget>[
+          NavigationDestination(icon: Icon(Icons.home), label: ''),
+          NavigationDestination(icon: Icon(Icons.account_box_sharp), label: ''),
+          NavigationDestination(icon: Icon(Icons.chat), label: ''),
+          NavigationDestination(icon: Icon(Icons.settings), label: '')
+        ],
+      ),
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent,
         centerTitle: true,
@@ -85,7 +102,7 @@ class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
                             builder: (builder) =>
                                 const ResponsiveDesignScreen()));
                   },
-                  child: const Text('ResponsiveScreen'))
+                  child: const Text('ResponsiveScreen')),
             ],
           ),
         ),
