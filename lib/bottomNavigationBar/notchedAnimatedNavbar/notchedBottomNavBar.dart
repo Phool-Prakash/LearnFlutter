@@ -33,24 +33,30 @@ class _NotchedBottomNavBarState extends State<NotchedBottomNavBar> {
           style: textStyle,
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
-
-        shape: const CircularNotchedRectangle(),
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        height: 60,
-        color: Colors.cyan.shade400,
-        notchMargin: 5,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: <Widget>[
-            IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.people)),
-            IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
-          ],
-        ),
-      ),
+      // bottomNavigationBar:,
     );
   }
 }
+
+
+
+///BottomAppBar
+
+// BottomAppBar(
+//
+// shape: const CircularNotchedRectangle(),
+// padding: const EdgeInsets.symmetric(horizontal: 10),
+// height: 60,
+// color: Colors.cyan.shade400,
+// notchMargin: 5,
+// child: Row(
+// mainAxisAlignment: MainAxisAlignment.spaceBetween,
+// mainAxisSize: MainAxisSize.max,
+// children: <Widget>[
+// IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
+// IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+// IconButton(onPressed: () {}, icon: const Icon(Icons.people)),
+// IconButton(onPressed: () {}, icon: const Icon(Icons.settings)),
+// ],
+// ),
+// )

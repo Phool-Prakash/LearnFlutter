@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learn/bottomNavigationBar/notchedBottomNavBar.dart';
+import 'package:flutter_learn/bottomNavigationBar/notchedAnimatedNavbar/notchedBottomNavBar.dart';
 import 'package:flutter_learn/customButton/customElevatedButton.dart';
 import 'package:flutter_learn/customButton/customFilledButton.dart';
 
