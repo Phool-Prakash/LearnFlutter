@@ -1,4 +1,8 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+
+import 'notchedNavBar/CurvedNavigationBar.dart';
+// import 'package:flutter_learn/bottomNavigationBar/notchedAnimatedNavbar/notchedNavBar/CurvedNavigationBar.dart';
 
 class NotchedBottomNavBar extends StatefulWidget {
   const NotchedBottomNavBar({super.key});
@@ -14,16 +18,19 @@ class _NotchedBottomNavBarState extends State<NotchedBottomNavBar> {
       color: Colors.black,
       fontWeight: FontWeight.bold,
       letterSpacing: 1);
+
+  int _page = 0;
+  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        shape:const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(28))),
-        onPressed: () {},
-        child: const Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   shape: const RoundedRectangleBorder(
+      //       borderRadius: BorderRadius.all(Radius.circular(28))),
+      //   onPressed: () {},
+      //   child: const Icon(Icons.add),
+      // ),
       extendBody: true,
       appBar: AppBar(
         centerTitle: true,
@@ -33,12 +40,32 @@ class _NotchedBottomNavBarState extends State<NotchedBottomNavBar> {
           style: textStyle,
         ),
       ),
-      // bottomNavigationBar:,
+      bottomNavigationBar: CurvedNavigationBar1(
+        // key: _bottomNavigationKey,
+        color: Colors.white,
+        buttonBackgroundColor: Colors.white,
+        backgroundColor: Colors.blueAccent,
+        animationCurve: Curves.easeInOut,
+        animationDuration:const Duration(milliseconds: 600),
+        // key: _bottomNavigationKey,
+        index:  0,
+        items: const <Widget>[
+          Icon(Icons.add, size: 30),
+          Icon(Icons.list, size: 30),
+          Icon(Icons.compare_arrows, size: 30),
+          Icon(Icons.call_split, size: 30),
+          Icon(Icons.perm_identity, size: 30),
+        ],
+        onTap: (index) {
+          setState(() {
+            _page = index;
+          });
+        },
+        letIndexChange: (index) => true,
+      ),
     );
   }
 }
-
-
 
 ///BottomAppBar
 

@@ -11,7 +11,7 @@ class NavCustomPainter extends CustomPainter {
     final span = 1.0 / itemsLength;
     s = 0.2;
     double l = startingLoc + (span - s) / 2;
-    loc = textDirection == TextDirection.rtl ? 0.8 - 1 : 1;
+    loc = textDirection == TextDirection.rtl ? 0.8 - l : l;
   }
 
   @override

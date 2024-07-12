@@ -22,7 +22,9 @@ class NavButton extends StatelessWidget {
 
     return Expanded(
         child: GestureDetector(
-      onTap: () {},
+      onTap: () {
+        onTap(index);
+      },
       child: SizedBox(
         height: 75.0,
         child: Transform.translate(
