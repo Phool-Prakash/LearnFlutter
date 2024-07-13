@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/bottomNavigationBar/notchedAnimatedNavbar/notchedBottomNavBar.dart';
 import 'package:flutter_learn/customButton/customElevatedButton.dart';
 import 'package:flutter_learn/customButton/customFilledButton.dart';
+import 'package:flutter_learn/statemanagement/Widgets/materialWidget/actionScreen.dart';
+import 'package:flutter_learn/statemanagement/Widgets/materialWidget/communicationScreen.dart';
 
 import '../../../bottomNavigationBar/bottomNavigationBar(NavigationBar).dart';
 
@@ -32,12 +34,28 @@ class _MaterialWidgetState extends State<MaterialWidget> {
             Center(
                 child: CustomElevatedButton(
               elevation: 0,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ActionScreen()));
+              },
               text: 'Actions',
             )),
-            const CustomFilledButton(),
+            CustomFilledButton(
+              color3: Colors.purple.shade400,
+              color1: Colors.purpleAccent,
+              color2: Colors.pinkAccent,
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const CommunicationScreen()));
+              },
+              text: 'Communication',
+            ),
             const SizedBox(
-              height: 20,
+              height: 12,
             ),
             Container(
               height: 44.0,
@@ -49,7 +67,7 @@ class _MaterialWidgetState extends State<MaterialWidget> {
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.transparent,
                     shadowColor: Colors.transparent),
-                child: const Text('Elevated Button'),
+                child: const Text('Containment'),
               ),
             ),
 
@@ -66,6 +84,24 @@ class _MaterialWidgetState extends State<MaterialWidget> {
             //   titleTextSize: 25,
             //   subTitleTextSize: 18,
             // )
+            const SizedBox(
+              height: 12,
+            ),
+            CustomFilledButton(
+                color1: Colors.red,
+                color2: Colors.redAccent,
+                color3: Colors.orange,
+                onPressed: () {},
+                text: 'Navigation'),
+            const SizedBox(
+              height: 12,
+            ),
+            CustomFilledButton(
+                color2: Colors.blue.shade700,
+                color3: Colors.blueGrey.shade700,
+                color1: Colors.blue.shade600,
+                onPressed: () {},
+                text: 'Selection'),
             CustomElevatedButton(
                 text: 'NotchedBottomNavBar',
                 onPressed: () {
