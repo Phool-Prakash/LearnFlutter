@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/statemanagement/Widgets/materialWidget/actions/commonButtons.dart';
-import 'package:flutter_learn/statemanagement/Widgets/materialWidget/actions/extendedFloatingActionButton.dart';
 import 'package:flutter_learn/statemanagement/Widgets/materialWidget/actions/floatingActionButton.dart';
 import 'package:flutter_learn/statemanagement/Widgets/materialWidget/actions/iconButtonScreen.dart';
 import 'package:flutter_learn/statemanagement/Widgets/materialWidget/actions/segmentedButtonScreen.dart';
@@ -36,7 +35,6 @@ class _ActionScreenState extends State<ActionScreen> {
         destinations: const <Widget>[
           NavigationDestination(icon: Icon(Icons.smart_button), label: 'cButton'),
           NavigationDestination(icon: Icon(Icons.radio_button_checked), label: 'fAButton'),
-          NavigationDestination(icon: Icon(Icons.bubble_chart), label: 'eFAButton'),
           NavigationDestination(icon: Icon(Icons.radio_button_off), label: 'iButton'),
           NavigationDestination(icon: Icon(Icons.safety_check), label: 'sButton'),
         ],
@@ -50,7 +48,6 @@ class _ActionScreenState extends State<ActionScreen> {
       body: const <Widget>[
         CommonButtonsScreen(),
         FloatingActionButtonScreen(),
-        ExtendedFloatingActionButton(),
         IconButtonScreen(),
         SegmentedButtonScreen()
       ][currentIndex],

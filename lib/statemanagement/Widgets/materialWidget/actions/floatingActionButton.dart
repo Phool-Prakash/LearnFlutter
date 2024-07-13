@@ -16,6 +16,7 @@ class _FloatingActionButtonScreenState
     (Colors.orange, Colors.grey, null),
     (Colors.white, Colors.green, CircleBorder())
   ];
+
   int index = 0;
 
   @override
