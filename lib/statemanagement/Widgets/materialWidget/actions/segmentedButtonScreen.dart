@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn/paddingExtension/paddingExtension.dart';
 
 class SegmentedButtonScreen extends StatefulWidget {
   const SegmentedButtonScreen({super.key});
@@ -11,15 +12,17 @@ class _SegmentedButtonScreenState extends State<SegmentedButtonScreen> {
   Calender calenderView = Calender.day;
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Single Choice'),
+            Text('Single Choice').padAll(10),
             SingleChoice(),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             MultipleChoice()
           ],
         ),
@@ -103,6 +106,19 @@ class _MultipleChoiceState extends State<MultipleChoice> {
         });
       },
       multiSelectionEnabled: true,
+    );
+  }
+}
+
+class Screen1 extends StatelessWidget {
+  const Screen1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [Text('Date').padAll(10)],
+      ),
     );
   }
 }
