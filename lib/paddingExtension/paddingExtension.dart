@@ -20,6 +20,8 @@ extension PaddingExtension on Widget {
 
 extension VisibilityExtension on Widget {
   Widget visible(bool isVisible) => isVisible ? this : const SizedBox.shrink();
+
+  Widget sizeHeight(double value) => SizedBox(height: value,child: this,);
 }
 
 ///Adds uniform margin around the widget
@@ -62,3 +64,5 @@ extension BorderExtension on Widget {
         child: this,
       );
 }
+
+

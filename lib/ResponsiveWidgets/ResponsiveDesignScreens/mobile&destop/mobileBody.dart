@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_learn/paddingExtension/paddingExtension.dart';
 
 class MobileBodyScreen extends StatefulWidget {
   const MobileBodyScreen({super.key});
@@ -22,26 +23,20 @@ class _MobileBodyScreenState extends State<MobileBodyScreen> {
       // backgroundColor: Colors.purple,
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Container(
-                color: Colors.deepPurple,
-              ),
+          AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Container(
+              color: Colors.deepPurple,
             ),
-          ),
+          ).padAll(8),
           Expanded(
               child: ListView.builder(
                   itemCount: 6,
                   itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(6),
-                      child: Container(
-                        height: 110,
-                        color: Colors.amber,
-                      ),
-                    );
+                    return Container(
+                      height: 110,
+                      color: Colors.amber,
+                    ).padAll(8);
                   }))
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_learn/paddingExtension/paddingExtension.dart';
 
 class SegmentedButtonScreen extends StatefulWidget {
@@ -18,12 +19,12 @@ class _SegmentedButtonScreenState extends State<SegmentedButtonScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text('Single Choice').padAll(10),
-            SingleChoice(),
-            SizedBox(
+            const Text('Single Choice').padAll(10),
+            const SingleChoice(),
+            const SizedBox(
               height: 15,
             ),
-            MultipleChoice()
+            const MultipleChoice()
           ],
         ),
       ),

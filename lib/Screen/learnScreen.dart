@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/ResponsiveWidgets/GridView/gridViewAndList.dart';
 import 'package:flutter_learn/ResponsiveWidgets/responsiveWidgetsScreen.dart';
 import 'package:flutter_learn/ResponsiveWidgets/userInputAccessibility/user_input_accessibility.dart';
+import 'package:flutter_learn/paddingExtension/paddingExtension.dart';
 import 'package:flutter_learn/statemanagement/statemanagement_screen.dart';
 
 class LearnScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class LearnScreen extends StatefulWidget {
 }
 
 class _LearnScreenState extends State<LearnScreen> {
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -76,7 +78,10 @@ class _LearnScreenState extends State<LearnScreen> {
                             builder: (builder) =>
                                 const StatemanagementScreen()));
                   },
-                  child: const Text("About State Management"))
+                  child: const Text("About State Management")),
+              const SizedBox(
+                height: 10,
+              ),
             ],
           ),
         ),

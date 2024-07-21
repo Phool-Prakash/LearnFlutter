@@ -30,7 +30,6 @@ class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
           NavigationDestination(icon: Icon(Icons.home), label: ''),
           NavigationDestination(icon: Icon(Icons.account_box_sharp), label: ''),
           NavigationDestination(icon: Icon(Icons.chat), label: ''),
-          NavigationDestination(icon: Icon(Icons.settings), label: '')
         ],
       ),
       appBar: AppBar(
@@ -43,7 +42,6 @@ class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
       ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
@@ -79,14 +77,20 @@ class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
               ),
               SizedBox(
                 height: 150,
-                child: NavigationRail(destinations: const [
+                child: NavigationRail(
+                  onDestinationSelected: (value){
+                    setState(() {
+                      _currentIndex = value;
+                    });
+                  },
+                    destinations: const [
                   NavigationRailDestination(
                       icon: Icon(Icons.home), label: Text('Home')),
                   NavigationRailDestination(
                       icon: Icon(Icons.call), label: Text('Call')),
                   NavigationRailDestination(
                       icon: Icon(Icons.more), label: Text('More'))
-                ], selectedIndex: 0),
+                ], selectedIndex: _currentIndex),
               ),
               const SizedBox(
                 height: 10,
