@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/ResponsiveWidgets/GridView/gridViewAndList.dart';
 import 'package:flutter_learn/ResponsiveWidgets/responsiveWidgetsScreen.dart';
 import 'package:flutter_learn/ResponsiveWidgets/userInputAccessibility/user_input_accessibility.dart';
-import 'package:flutter_learn/paddingExtension/paddingExtension.dart';
+import 'package:flutter_learn/animations/flutterAnimation.dart';
+import 'package:flutter_learn/revisionFlutter/revisionMain.dart';
 import 'package:flutter_learn/statemanagement/statemanagement_screen.dart';
+
+import '../customButton/customElevatedButton.dart';
 
 class LearnScreen extends StatefulWidget {
   const LearnScreen({super.key});
@@ -14,10 +17,24 @@ class LearnScreen extends StatefulWidget {
 
 class _LearnScreenState extends State<LearnScreen> {
   bool obscureText = true;
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        bottomNavigationBar: NavigationBar(
+          onDestinationSelected: (value) {
+            setState(() {
+              _currentIndex = value;
+            });
+          },
+          selectedIndex: _currentIndex,
+          destinations: const <Widget>[
+            NavigationDestination(icon: Icon(Icons.more), label: 'More'),
+            NavigationDestination(icon: Icon(Icons.add_alert), label: 'Add'),
+            NavigationDestination(icon: Icon(Icons.delete), label: 'Delete'),
+          ],
+        ),
         appBar: AppBar(
           backgroundColor: Colors.deepOrange,
           centerTitle: true,
@@ -82,6 +99,24 @@ class _LearnScreenState extends State<LearnScreen> {
               const SizedBox(
                 height: 10,
               ),
+              CustomElevatedButton(
+                buttonColor: Colors.red,
+                text: 'Revision Screen',
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (builder) => const RevisionMainScreen()));
+                },
+              ),
+              CustomElevatedButton(
+                  text: 'Animation',
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => const AnimationScreen()));
+                  })
             ],
           ),
         ),

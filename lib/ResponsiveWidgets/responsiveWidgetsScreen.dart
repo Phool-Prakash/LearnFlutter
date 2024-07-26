@@ -12,15 +12,14 @@ class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
   int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-
     final currentSize = MediaQuery.of(context).size.width;
     final currentSize1 = MediaQuery.sizeOf(context).width;
     var i = 1;
     return SafeArea(
         child: Scaffold(
       bottomNavigationBar: NavigationBar(
-        selectedIndex : _currentIndex,
-        onDestinationSelected: (int index){
+        selectedIndex: _currentIndex,
+        onDestinationSelected: (int index) {
           setState(() {
             _currentIndex = index;
           });
@@ -78,19 +77,20 @@ class _ResponsiveWidgetsState extends State<ResponsiveWidgets> {
               SizedBox(
                 height: 150,
                 child: NavigationRail(
-                  onDestinationSelected: (value){
-                    setState(() {
-                      _currentIndex = value;
-                    });
-                  },
+                    onDestinationSelected: (value) {
+                      setState(() {
+                        _currentIndex = value;
+                      });
+                    },
                     destinations: const [
-                  NavigationRailDestination(
-                      icon: Icon(Icons.home), label: Text('Home')),
-                  NavigationRailDestination(
-                      icon: Icon(Icons.call), label: Text('Call')),
-                  NavigationRailDestination(
-                      icon: Icon(Icons.more), label: Text('More'))
-                ], selectedIndex: _currentIndex),
+                      NavigationRailDestination(
+                          icon: Icon(Icons.home), label: Text('Home')),
+                      NavigationRailDestination(
+                          icon: Icon(Icons.call), label: Text('Call')),
+                      NavigationRailDestination(
+                          icon: Icon(Icons.more), label: Text('More'))
+                    ],
+                    selectedIndex: _currentIndex),
               ),
               const SizedBox(
                 height: 10,

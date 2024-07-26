@@ -5,6 +5,8 @@ import 'package:flutter_learn/statemanagement/inheritedWidget/mystatefulWidget.d
 import 'package:flutter_learn/statemanagement/statefull&less/statefull/bird.dart';
 import 'package:flutter_learn/statemanagement/styledWidgets/styledWidgets.dart';
 
+import '../customButton/customElevatedButton.dart';
+
 class StatemanagementScreen extends StatefulWidget {
   const StatemanagementScreen({super.key});
 
@@ -52,7 +54,7 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                               ),
                             )));
               }),
-          CustomElevatedButton(
+          CustomElevatedButton1(
               text: 'Styled Widget',
               onPressed: () {
                 Navigator.push(
@@ -60,7 +62,7 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
                     MaterialPageRoute(
                         builder: (builder) => const StyledWidgets()));
               }),
-          CustomElevatedButton(
+          CustomElevatedButton1(
               text: 'Material Widget',
               onPressed: () {
                 Navigator.push(
@@ -157,8 +159,8 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
 
 ///Using Widget method to create a CustomElevatedButton
 
-class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton(
+class CustomElevatedButton1 extends StatelessWidget {
+  const CustomElevatedButton1(
       {super.key, required this.text, required this.onPressed});
   final VoidCallback onPressed;
   final String text;
