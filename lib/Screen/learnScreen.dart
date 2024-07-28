@@ -1,3 +1,4 @@
+import 'package:custombutton_che/custombutton_che.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/ResponsiveWidgets/GridView/gridViewAndList.dart';
 import 'package:flutter_learn/ResponsiveWidgets/responsiveWidgetsScreen.dart';
@@ -22,6 +23,7 @@ class _LearnScreenState extends State<LearnScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.blueGrey,
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (value) {
             setState(() {
@@ -116,7 +118,8 @@ class _LearnScreenState extends State<LearnScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (builder) => const AnimationScreen()));
-                  })
+                  }),
+              CustomButtonChe(onPressed: () {}, text: 'Animation')
             ],
           ),
         ),

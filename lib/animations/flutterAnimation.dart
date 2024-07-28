@@ -29,16 +29,43 @@ class _AnimationScreenState extends State<AnimationScreen>
 
   @override
   Widget build(BuildContext context) {
+    double size = 300.0;
     return Center(
-      child: FadeTransition(
-        opacity: _controller,
-        child: const FlutterLogo(
-          textColor: Colors.white,
-          style:FlutterLogoStyle.markOnly,
-          curve: Curves.fastEaseInToSlowEaseOut,
-          duration: Duration(seconds: 3),
-          size: 100,
-        ),
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 15,
+          ),
+
+          ///Explicit Animation
+          FadeTransition(
+            opacity: _controller,
+            child: const FlutterLogo(
+              textColor: Colors.white,
+              style: FlutterLogoStyle.horizontal,
+              curve: Curves.fastEaseInToSlowEaseOut,
+              duration: Duration(seconds: 3),
+              size: 100,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+
+          ///Implicit Animation
+          AnimatedContainer(
+            decoration: const BoxDecoration(
+                gradient:
+                    LinearGradient(colors: [Colors.yellow, Colors.orange])),
+            duration: const Duration(seconds: 1),
+            transform: Matrix4.identity()
+              ..translate(size / 2, size / 2)
+              ..multiply(Matrix4.rotationZ(size/4))
+              ..translate(-size / 2, -size / 2),
+            height: size,
+            width: size,
+          )
+        ],
       ),
     );
   }
