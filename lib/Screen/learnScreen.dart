@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learn/ResponsiveWidgets/GridView/gridViewAndList.dart';
 import 'package:flutter_learn/ResponsiveWidgets/responsiveWidgetsScreen.dart';
 import 'package:flutter_learn/ResponsiveWidgets/userInputAccessibility/user_input_accessibility.dart';
+import 'package:flutter_learn/animations/explicitAnimation/built_inAnimation.dart';
 import 'package:flutter_learn/animations/flutterAnimation.dart';
 import 'package:flutter_learn/revisionFlutter/revisionMain.dart';
 import 'package:flutter_learn/statemanagement/statemanagement_screen.dart';
@@ -119,7 +120,15 @@ class _LearnScreenState extends State<LearnScreen> {
                         MaterialPageRoute(
                             builder: (builder) => const AnimationScreen()));
                   }),
-              CustomButtonChe(onPressed: () {}, text: 'Animation')
+              CustomButtonChe(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) =>
+                                const BuiltInAnimationScreen()));
+                  },
+                  text: 'Animation')
             ],
           ),
         ),

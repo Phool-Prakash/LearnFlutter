@@ -164,8 +164,7 @@ class _AnimationScreenState extends State<AnimationScreen>
                 height: 20,
               ),
               TweenAnimationBuilder(
-                child: Image.asset('assets/sun.jpg'),
-                  tween: ColorTween(begin: Colors.white, end: _newColor),
+                tween: ColorTween(begin: Colors.white, end: _newColor),
                   //2.
                   // tween: colorTween,
                   duration: const Duration(seconds: 0),
@@ -174,7 +173,8 @@ class _AnimationScreenState extends State<AnimationScreen>
                         colorFilter:
                             ColorFilter.mode(color!, BlendMode.modulate),
                         child: myChild);
-                  }),
+                  },
+                child: Image.asset('assets/sun.jpg')),
 
               //Slider
               Slider.adaptive(
