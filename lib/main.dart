@@ -4,11 +4,13 @@ import 'package:flutter_learn/Screen/learnScreen.dart';
 import 'package:flutter_learn/statemanagement/provider/ChangeNotifierClass/counterChangeNotifier.dart';
 import 'package:provider/provider.dart';
 
-Future<void> main() async{
+Future<void> main() async {
+  // Stripe.publishableKey =
+  //     "pk_test_51PuoSMRvqmmPIz08UE1KW9kqDuAxsXpmdvfXExHUza44MIoxPF6mF3UBcLaI3dk2KCEFJ3GLZMM912poOJqFuN9Y00aEUcdjXd";
   await dotenv.load(fileName: "assets/.env");
   runApp(ChangeNotifierProvider(
     create: (context) => CounterClass(),
-    child:const MyApp(),
+    child: const MyApp(),
   ));
 }
 

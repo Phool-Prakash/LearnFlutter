@@ -154,10 +154,10 @@ class _LearnScreenState extends State<LearnScreen> {
                   gradient: const LinearGradient(
                       colors: [Colors.yellowAccent, Colors.yellow]),
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (builder) => const StripeMainScreen()));
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //         builder: (builder) => const HomeScreen()));
                   },
                   child: const Text('Flutter Stripe(Payment GetWay'))
             ],
