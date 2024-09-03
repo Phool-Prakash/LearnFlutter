@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_learn/Screen/learnScreen.dart';
+import 'package:flutter_learn/statemanagement/provider/ChangeNotifierClass/counterChangeNotifier.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async{
+  await dotenv.load(fileName: ".env");
+  runApp(ChangeNotifierProvider(
+    create: (context) => CounterClass(),
+    child:const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

@@ -26,12 +26,14 @@ class _BuiltInAnimationScreenState extends State<BuiltInAnimationScreen>
       children: <Widget>[
         Align(
           alignment: Alignment.bottomLeft,
-          child: TimeStopper(controller: _animationController!,),
+          child: TimeStopper(
+            controller: _animationController!,
+          ),
         ),
         RotationTransition(
             alignment: Alignment.center,
             turns: _animationController!,
-            child: const GalaxyFitZ()),
+            child: const GalaxyFitz()),
       ],
     );
   }
@@ -44,18 +46,13 @@ class _BuiltInAnimationScreenState extends State<BuiltInAnimationScreen>
   }
 }
 
-class GalaxyFitZ extends StatelessWidget {
-  const GalaxyFitZ({super.key});
+///GalaxyFitz
+class GalaxyFitz extends StatelessWidget {
+  const GalaxyFitz({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Image.asset(
-        'assets/glx.jpeg',
-        colorBlendMode: BlendMode.modulate,
-        fit: BoxFit.fill,
-      ),
-    );
+    return Center(child: Image.asset('assets/galaxy_transparent.png'));
   }
 }
 
@@ -68,18 +65,17 @@ class TimeStopper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        if (controller.isAnimating) {
-          controller.stop();
-        } else {
-          controller.repeat();
-        }
-      },
-      child: Container(
-        decoration: const BoxDecoration(color: Colors.white),
-        width: 100,
-        height: 100,
-      ),
-    );
+        onTap: () {
+          if (controller.isAnimating) {
+            controller.stop();
+          } else {
+            controller.repeat();
+          }
+        },
+        child: const Icon(
+          Icons.play_arrow,
+          size: 80,
+          color: Colors.white,
+        ));
   }
 }

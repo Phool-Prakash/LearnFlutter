@@ -56,7 +56,7 @@ class CustomNavigationBar extends StatelessWidget {
       child: SafeArea(
         child: SizedBox(
           height: effectiveHeight,
-          child: Row(children: <Widget>[
+          child: const Row(children: <Widget>[
           ]),
         ),
       ),

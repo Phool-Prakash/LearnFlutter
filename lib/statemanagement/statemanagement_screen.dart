@@ -2,19 +2,20 @@ import 'package:custombutton_che/custombutton_che.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learn/statemanagement/Widgets/materialWidget/materialWidget.dart';
 import 'package:flutter_learn/statemanagement/inheritedWidget/mystatefulWidget.dart';
+import 'package:flutter_learn/statemanagement/provider/providerScreen.dart';
 import 'package:flutter_learn/statemanagement/statefull&less/statefull/bird.dart';
 import 'package:flutter_learn/statemanagement/styledWidgets/styledWidgets.dart';
 
 import '../customButton/customElevatedButton.dart';
 
-class StatemanagementScreen extends StatefulWidget {
-  const StatemanagementScreen({super.key});
+class StateManagementScreen extends StatefulWidget {
+  const StateManagementScreen({super.key});
 
   @override
-  State<StatemanagementScreen> createState() => _StatemanagementScreenState();
+  State<StateManagementScreen> createState() => _StateManagementScreenState();
 }
 
-class _StatemanagementScreenState extends State<StatemanagementScreen> {
+class _StateManagementScreenState extends State<StateManagementScreen> {
   int currentPageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -94,7 +95,12 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
               borderRadius: const BorderRadius.all(Radius.circular(20)),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const ProviderScreen()));
+              },
               child: Container(
                 height: 48,
                 width: MediaQuery.of(context).size.width * 0.60,
@@ -129,6 +135,13 @@ class _StatemanagementScreenState extends State<StatemanagementScreen> {
               ),
             ),
           ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.blueAccent),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) =>const ProviderScreen()));
+              },
+              child: const Text('ProviderScreen'))
         ],
       ),
       // bottomNavigationBar: NavigationBar(
