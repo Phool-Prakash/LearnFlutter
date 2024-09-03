@@ -5,7 +5,7 @@ import 'package:flutter_learn/statemanagement/provider/ChangeNotifierClass/count
 import 'package:provider/provider.dart';
 
 Future<void> main() async{
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: "assets/.env");
   runApp(ChangeNotifierProvider(
     create: (context) => CounterClass(),
     child:const MyApp(),
