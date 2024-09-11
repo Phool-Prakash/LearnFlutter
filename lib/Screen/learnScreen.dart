@@ -9,6 +9,7 @@ import 'package:flutter_learn/animations/explicitAnimation/built_inAnimation.dar
 import 'package:flutter_learn/animations/flutterAnimation.dart';
 import 'package:flutter_learn/revisionFlutter/revisionMain.dart';
 import 'package:flutter_learn/statemanagement/statemanagement_screen.dart';
+import 'package:flutter_learn/workingWithAPI/webSocketScreen.dart';
 
 import '../customButton/customElevatedButton.dart';
 
@@ -159,7 +160,20 @@ class _LearnScreenState extends State<LearnScreen> {
                     //     MaterialPageRoute(
                     //         builder: (builder) => const HomeScreen()));
                   },
-                  child: const Text('Flutter Stripe(Payment GetWay'))
+                  child: const Text('Flutter Stripe(Payment GetWay')),
+              CustomButtonChe(
+                  bHeight: 50,
+                  textSize: 17,
+                  color3: Colors.green,
+                  color2: Colors.lightGreen.shade400,
+                  color1: Colors.lightGreenAccent.shade700,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => const WebSocketScreen()));
+                  },
+                  text: 'Test Screen'),
             ],
           ),
         ),
