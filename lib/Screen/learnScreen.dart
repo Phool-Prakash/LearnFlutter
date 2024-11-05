@@ -4,9 +4,9 @@ import 'package:flutter_learn/ResponsiveWidgets/GridView/gridViewAndList.dart';
 import 'package:flutter_learn/ResponsiveWidgets/responsiveWidgetsScreen.dart';
 import 'package:flutter_learn/ResponsiveWidgets/userInputAccessibility/user_input_accessibility.dart';
 import 'package:flutter_learn/Screen/testScreen.dart';
-import 'package:flutter_learn/Stripe(paymentGetWay)/stripeMainScreen.dart';
 import 'package:flutter_learn/animations/explicitAnimation/built_inAnimation.dart';
 import 'package:flutter_learn/animations/flutterAnimation.dart';
+import 'package:flutter_learn/dummyData/postScreen.dart';
 import 'package:flutter_learn/revisionFlutter/revisionMain.dart';
 import 'package:flutter_learn/statemanagement/statemanagement_screen.dart';
 import 'package:flutter_learn/workingWithAPI/webSocketScreen.dart';
@@ -161,6 +161,9 @@ class _LearnScreenState extends State<LearnScreen> {
                     //         builder: (builder) => const HomeScreen()));
                   },
                   child: const Text('Flutter Stripe(Payment GetWay')),
+              const SizedBox(
+                height: 12,
+              ),
               CustomButtonChe(
                   bHeight: 50,
                   textSize: 17,
@@ -174,6 +177,19 @@ class _LearnScreenState extends State<LearnScreen> {
                             builder: (builder) => const WebSocketScreen()));
                   },
                   text: 'Test Screen'),
+              CustomButtonChe(
+                  bHeight: 50,
+                  textSize: 17,
+                  color3: Colors.green,
+                  color2: Colors.lightGreen.shade400,
+                  color1: Colors.lightGreenAccent.shade700,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (builder) => PostScreen(postId: 1)));
+                  },
+                  text: 'Dummy Data'),
             ],
           ),
         ),

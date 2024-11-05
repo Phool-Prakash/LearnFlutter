@@ -9,7 +9,7 @@ class UserModel {
   UserModel({required this.name, required this.age, required this.email});
 
   //Deserialization
-  factory UserModel.toJson(Map<String, dynamic> json) {
+  factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
         name: json['name'] as String,
         age: json['age'] as int,
@@ -20,4 +20,10 @@ class UserModel {
   Map<String, dynamic> toJson() {
     return {'name': name, 'age': age, 'email': email};
   }
+}
+
+class Student {
+  final String name;
+  final int age;
+  Student({required this.name, required this.age});
 }
